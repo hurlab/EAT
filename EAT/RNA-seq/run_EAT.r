@@ -14,9 +14,9 @@ pca$sample<-group$Group
 ggplot(pca,aes(PC1,PC2,color=condition,shape=sample))+geom_point(size=4)+xlab(paste0("PC1: ",percentVar[1],"%"))+ylab(paste("PC2: ",percentVar[2],"%"))
 ggsave(file="EAT_new.pdf")
 ######
-resbo<-results(dds,contrast = c("condition","Boison_Group2","Ruskin_Group1"))
-reslu<-results(dds,contrast = c("condition","Boison_Group2","Lubin_Group1"))
-resru<-results(dds,contrast = c("condition","Ruskin_Group1","Lubin_Group1"))
+resbo<-results(dds,contrast = c("condition","Site1","Site2"))
+reslu<-results(dds,contrast = c("condition","Site1","Site3"))
+resru<-results(dds,contrast = c("condition","Site2","Site3"))
 #####
 library(richR)
 rtgo<-buildAnnot(species="rat",keytype="ENSEMBL",anntype="GO")
