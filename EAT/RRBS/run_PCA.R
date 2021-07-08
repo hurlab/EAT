@@ -5,9 +5,9 @@ group<-read.delim("EAT_group_cluster.txt",sep="\t",row.names=1)
 sample.ids<-as.list(group$Group)
 library(methylKit)
 x<-group$Group
-x[x=="Boison_Group2"]=0
-x[x=="Lubin_Group1"]=1
-x[x=="Ruskin_Group1"]=2
+x[x=="Site1"]=0
+x[x=="Site3"]=1
+x[x=="Site2"]=2
 x<-as.numeric(x)
 myobj<-processBismarkAln(location=filenames,sample.id=sample.ids,save.folder=NULL,save.context=NULL,read.context="CpG",nolap=FALSE,phred64=FALSE,treatment=x,assembly="rn6")
 mymeth<-unite(myobj, destrand=FALSE)
